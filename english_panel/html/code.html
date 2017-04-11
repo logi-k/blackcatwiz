@@ -70,7 +70,7 @@ var data = [
 "hand", "手",
 "happiness", "幸福",
 "hat", "帽子",
-"hawk", "タカ",
+"hawk", "タカ(鷹)",
 "headache", "頭痛",
 "heavy", "重い",
 "heel", "かかと",
@@ -230,10 +230,10 @@ function randqa() {
 }
 function chkdata() {
   var text = document.getElementById("chktext").value;
-  text.trim();
   if ((typeof text) !== "string") {
     return;
   }
+  text.trim();
 
   var result = "";
   var i = 0;
@@ -260,7 +260,8 @@ function chkdata() {
 p#qalabel { font-size:24px; font-weight:bold; color:red; line-height:0.5; }
 p#qatext { font-size:32px; font-weight:bold; color:blue; text-align:center; }
 div#ctrlpnl { margin-right:8px; }
-p#chklabel { font-size:24px; font-weight:bold; color:red; line-height:0.5; }
+p#chklabel { margin:0 0 10px 0; font-size:24px; font-weight:bold; color:red; line-height:1.0; }
+div#chkpnl { margin-top:30px; padding:10px; background-color:rgba(255, 255, 255, 0.8); border:solid 1px #cccccc;}
 input#chktext { size:20; }
 .debug { display:block; }
 -->
@@ -270,11 +271,15 @@ input#chktext { size:20; }
 <p id="qalabel">QA</p>
 <p id="qatext">テキスト</p>
 <div id="ctrlpnl">
-<form id="uiform" href="javascript:void(0);" onsubmit="chkdata(); return false;">
+<form id="uiform" href="javascript:void(0);">
 <button type="button" onclick="(qadir > 0) ? prevqa() : nextqa();">◀</button>
 <button type="button" onclick="randqa();">ランダム出題</button>
 <button type="button" onclick="(qadir > 0) ? nextqa() : prevqa();">▶</button>
 <button type="button" onclick="swqa();">Q&A切替</button>
+</form>
+</div>
+<div id="chkpnl">
+<form id="chkform" href="javascript:void(0);" onsubmit="chkdata(); return false;">
 <p id="chklabel">問題有無確認</p>
 <input type="text" id="chktext"></input>
 <button type="button" onclick="chkdata();">確認</button>
