@@ -155,7 +155,6 @@ var data = [
 "soldier", "兵士",
 "society", "社会",
 "son", "息子",
-"spider", "クモ(蜘蛛)",
 "spring", "バネ",
 "Star Festival", "七夕",
 "see", "見る",
@@ -259,7 +258,7 @@ function chkdata() {
 <!--
 p#qalabel { font-size:24px; font-weight:bold; color:red; line-height:0.5; }
 p#qatext { font-size:32px; font-weight:bold; color:blue; text-align:center; }
-div#ctrlpnl { margin-right:8px; }
+form#ctrlpnl { text-align:right; }
 p#chklabel { font-size:24px; font-weight:bold; color:red; line-height:0.5; }
 input#chktext { size:20; }
 .debug { display:block; }
@@ -270,7 +269,7 @@ input#chktext { size:20; }
 <p id="qalabel">QA</p>
 <p id="qatext">テキスト</p>
 <div id="ctrlpnl">
-<form id="uiform" href="javascript:void(0);" onsubmit="chkdata(); return false;">
+<form id="uiform" href="javascript:void(0)" onsubmit="return false;">
 <button type="button" onclick="(qadir > 0) ? prevqa() : nextqa();">◀</button>
 <button type="button" onclick="randqa();">ランダム出題</button>
 <button type="button" onclick="(qadir > 0) ? nextqa() : prevqa();">▶</button>
