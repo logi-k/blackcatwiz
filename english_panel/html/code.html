@@ -1,0 +1,287 @@
+<html>
+<head>    
+<script type="text/javascript">
+// <!--
+var data = [
+"addition", "足し算",
+"adventure", "冒険",
+"advertisement", "宣伝",
+"ambulance", "救急車",
+"apple", "リンゴ",
+"astronomy", "天文学",
+"baloon", "気球",
+"bathroom", "浴室",
+"beast", "けもの",
+"beetle", "カブトムシ",
+"blood type", "血液型",
+"blue", "青",
+"body", "体",
+"boot", "長ぐつ",
+"bottle", "瓶",
+"bow", "弓",
+"breath", "呼吸",
+"breeze", "そよ風",
+"bride", "お嫁さん",
+"bubble", "泡",
+"bump", "こぶ",
+"calligraphy", "書道",
+"case", "容器",
+"castle", "城",
+"cause", "原因",
+"cellular phone", "携帯電話",
+"chestnut", "栗",
+"choice", "選択",
+"cosmos", "秋桜",
+"crane", "ツル",
+"crystal", "水晶",
+"danger", "危険",
+"delta", "三角州",
+"devil", "悪魔",
+"dimple", "えくぼ",
+"direction", "方向",
+"dolphin", "イルカ",
+"door", "扉",
+"dream", "夢",
+"Earth", "地球",
+"enemy", "敵",
+"empire", "帝国",
+"eraser", "消しゴム",
+"examination", "試験",
+"example", "例",
+"factory", "工場",
+"fairy", "妖精",
+"fence", "垣根",
+"fish", "魚",
+"flower bed", "花壇",
+"frost", "霜",
+"furniture", "家具",
+"galaxy", "銀河",
+"garlic", "ニンニク",
+"ginger", "ショウガ",
+"global warming", "地球温暖化",
+"goat", "ヤギ",
+"grade", "学年",
+"graffiti", "落書き",
+"green", "緑",
+"greenhouse", "温室",
+"green pepper", "ピーマン",
+"hair", "髪",
+"half", "半分",
+"hand", "手",
+"happiness", "幸福",
+"hat", "帽子",
+"hawk", "タカ",
+"headache", "頭痛",
+"heavy", "重い",
+"heel", "かかと",
+"hope", "希望",
+"horn", "らっぱ",
+"horse", "馬",
+"housework", "家事",
+"importance", "重要性",
+"jacket", "上着",
+"joke", "冗談",
+"jungle", "密林",
+"Jupiter", "木星",
+"knight", "騎士",
+"lawn", "芝生",
+"left", "左",
+"life", "命",
+"liquid", "液体",
+"map", "地図",
+"marriage", "結婚",
+"metal", "金属",
+"microscope", "顕微鏡",
+"milk", "牛乳",
+"model", "模型",
+"money", "お金",
+"motivation", "動機づけ",
+"mouth", "口",
+"movie", "映画",
+"multiplication", "かけ算",
+"name", "名前",
+"navel", "へそ",
+"negotiation", "交渉",
+"noise", "騒音",
+"number", "数",
+"nurse", "看護師",
+"octopus", "タコ",
+"orchard", "果樹園",
+"orchid", "ラン(蘭)",
+"order", "順序",
+"pain", "痛み",
+"paradise", "楽園",
+"parent", "親",
+"passion", "情熱",
+"photographer", "写真家",
+"pinky", "小指",
+"plan", "計画",
+"plant", "植物",
+"police", "警察",
+"politician", "政治家",
+"post card", "はがき",
+"powder", "粉",
+"power station", "発電所",
+"price", "価格",
+"promise", "約束",
+"pumpkin", "南瓜",
+"purpose", "目的",
+"rainbow", "虹",
+"really?", "本当？",
+"reason", "理由",
+"record", "記録",
+"recorder", "たて笛",
+"rectangle", "長方形",
+"red", "赤",
+"rest", "休憩",
+"restroom", "トイレ",
+"rice cake", "もち",
+"ruler", "定規",
+"salt", "塩",
+"sardine", "イワシ",
+"scorpion", "サソリ",
+"sea cucumber", "ナマコ",
+"second", "秒",
+"sentence", "文",
+"sesame", "ゴマ",
+"shade", "日陰",
+"shake hands", "握手",
+"ship", "船",
+"sidewalk", "歩道",
+"skill", "技能",
+"sleeve", "袖",
+"smile", "笑顔",
+"solar system", "太陽系",
+"soldier", "兵士",
+"society", "社会",
+"son", "息子",
+"spring", "バネ",
+"Star Festival", "七夕",
+"see", "見る",
+"stone", "石",
+"student", "学生",
+"sugar", "砂糖",
+"suggestion", "提案",
+"sun", "太陽",
+"sunflower", "ヒマワリ",
+"sweet potato", "サツマイモ",
+"swim ring", "浮き輪",
+"teeth", "歯",
+"thermometer", "温度計",
+"toast", "乾杯",
+"tommorow", "明日",
+"tool", "道具",
+"training", "訓練",
+"trap", "わな",
+"trapezoid", "台形",
+"travel", "旅",
+"trend", "流行",
+"tricycle", "三輪車",
+"triple jump", "三段跳び",
+"try and error", "試行錯誤",
+"twins", "双子",
+"Venus", "金星",
+"waist", "腰",
+"warning", "警告",
+"watermelon", "すいか",
+"wave", "波",
+"week", "週",
+"well", "井戸",
+"wife", "妻",
+"wire", "はり金",
+"witch", "魔女",
+"yawn", "あくび"
+];
+var qatype = "qa";
+var pos = 0;
+var qadir = 1;
+function setqa() {
+  if (qatype === "qa") {
+    document.getElementById("qalabel").innerHTML = (pos % 2 == 0) ? "問題" : "答え";
+  } else {
+    document.getElementById("qalabel").innerHTML = (pos % 2 == 0) ? "答え" : "問題";
+  }
+  document.getElementById("qatext").innerHTML= data[pos];
+
+  document.getElementById("qatypeval").innerHTML = qatype;
+  document.getElementById("qadirval").innerHTML = qadir;
+  document.getElementById("posval").innerHTML = pos;
+  document.getElementById("datasize").innerHTML= data.length;
+}
+function swqa() {
+  qatype = (qatype === "qa") ? "aq" : "qa";
+  qadir *= -1;
+  setqa();
+}
+function prevqa() {
+  pos--;
+  if (pos < 0) pos += data.length;
+  setqa();
+}
+function nextqa() {
+  pos++;
+  if (pos >= data.length) pos -= data.length;
+  setqa();
+}
+function randqa() {
+  pos = Math.floor(Math.random() * (data.length / 2)) * 2 + ((qatype === "qa") ? 0 : 1);
+  setqa();
+}
+function chkdata() {
+  var text = document.getElementById("chktext").value;
+  text.trim();
+  if ((typeof text) !== "string") {
+    return;
+  }
+
+  var result = "";
+  var i = 0;
+  for (; i < data.length; i++) {
+    if (data[i] === text) {
+      if (i % 2 == 0) {
+        result = data[i] + " → " + data[i + 1];
+      } else {
+        result = data[i] + " → " + data[i - 1];
+      }
+    }
+  }
+
+  if (result.length == 0) {
+    result = "登録されていません";
+  }
+
+  document.getElementById("chkresult").innerHTML= result;
+}
+// -->
+</script>
+<style type="text/css">
+<!--
+p#qalabel { font-size:24px; font-weight:bold; color:red; line-height:0.5; }
+p#qatext { font-size:32px; font-weight:bold; color:blue; text-align:center; }
+form#ctrlpnl { text-align:right; }
+p#chklabel { font-size:24px; font-weight:bold; color:red; line-height:0.5; }
+input#chktext { size:20; }
+.debug { display:block; }
+-->
+</style>
+</head>
+<body onload="setqa();">
+<p id="qalabel">QA</p>
+<p id="qatext">テキスト</p>
+<div id="ctrlpnl">
+<form id="uiform" href="javascript:void(0)" onsubmit="return false;">
+<button type="button" onclick="(qadir > 0) ? prevqa() : nextqa();">◀</button>
+<button type="button" onclick="randqa();">ランダム出題</button>
+<button type="button" onclick="(qadir > 0) ? nextqa() : prevqa();">▶</button>
+<button type="button" onclick="swqa();">Q&A切替</button>
+<p id="chklabel">問題有無確認</p>
+<input type="text" id="chktext"></input>
+<button type="button" onclick="chkdata();">確認</button>
+</form>
+<p id="chkresult"></p>
+</div>
+<div class="debug">
+<p>qatype: <span id="qatypeval"></span>, qadir: <span id="qadirval"></span>, pos: <span id="posval"></span>/<span id="datasize"></span></p>
+</div>
+</body>
+</html>
