@@ -6,6 +6,7 @@ var data = [
 "addition", "足し算",
 "adventure", "冒険",
 "advertisement", "宣伝",
+"air", "空気",
 "ambulance", "救急車",
 "apple", "リンゴ",
 "astronomy", "天文学",
@@ -19,6 +20,7 @@ var data = [
 "boot", "長ぐつ",
 "bottle", "瓶",
 "bow", "弓",
+"breakfast", "朝食",
 "breath", "呼吸",
 "breeze", "そよ風",
 "bride", "お嫁さん",
@@ -33,34 +35,42 @@ var data = [
 "choice", "選択",
 "cosmos", "秋桜",
 "crane", "ツル",
+"crow", "カラス",
 "crystal", "水晶",
 "danger", "危険",
 "delta", "三角州",
 "devil", "悪魔",
+"dictionary", "辞書",
 "dimple", "えくぼ",
 "direction", "方向",
 "dolphin", "イルカ",
 "door", "扉",
 "dream", "夢",
 "Earth", "地球",
+"echo", "こだま",
 "enemy", "敵",
 "empire", "帝国",
+"equator", "赤道",
 "eraser", "消しゴム",
 "examination", "試験",
 "example", "例",
 "factory", "工場",
 "fairy", "妖精",
 "fence", "垣根",
+"fireworks", "花火",
 "fish", "魚",
 "flower bed", "花壇",
 "frost", "霜",
 "furniture", "家具",
 "galaxy", "銀河",
 "garlic", "ニンニク",
+"Germany", "ドイツ",
+"gift", "贈り物",
 "ginger", "ショウガ",
 "global warming", "地球温暖化",
 "goat", "ヤギ",
 "grade", "学年",
+"graduation", "卒業",
 "graffiti", "落書き",
 "green", "緑",
 "greenhouse", "温室",
@@ -74,18 +84,24 @@ var data = [
 "headache", "頭痛",
 "heavy", "重い",
 "heel", "かかと",
+"horizontal bar", "鉄棒",
 "hope", "希望",
 "horn", "らっぱ",
 "horse", "馬",
 "housework", "家事",
+"human", "人間",
 "importance", "重要性",
 "jacket", "上着",
 "joke", "冗談",
 "jungle", "密林",
 "Jupiter", "木星",
+"key", "鍵",
 "knight", "騎士",
+"last name", "名字",
+"lawyer", "弁護士",
 "lawn", "芝生",
 "left", "左",
+"library", "図書館",
 "life", "命",
 "liquid", "液体",
 "map", "地図",
@@ -93,16 +109,19 @@ var data = [
 "metal", "金属",
 "microscope", "顕微鏡",
 "milk", "牛乳",
+"mirror", "鏡",
 "model", "模型",
 "money", "お金",
 "motivation", "動機づけ",
 "mouth", "口",
 "movie", "映画",
 "multiplication", "かけ算",
+"mutation", "突然変異",
 "name", "名前",
 "navel", "へそ",
 "negotiation", "交渉",
 "noise", "騒音",
+"noon", "正午",
 "number", "数",
 "nurse", "看護師",
 "octopus", "タコ",
@@ -113,10 +132,13 @@ var data = [
 "paradise", "楽園",
 "parent", "親",
 "passion", "情熱",
+"philosophy", "哲学",
 "photographer", "写真家",
+"pine", "マツ(松)",
 "pinky", "小指",
 "plan", "計画",
 "plant", "植物",
+"problem", "問題",
 "police", "警察",
 "politician", "政治家",
 "post card", "はがき",
@@ -135,22 +157,30 @@ var data = [
 "red", "赤",
 "rest", "休憩",
 "restroom", "トイレ",
+"revolution", "革命",
 "rice cake", "もち",
 "ruler", "定規",
 "salt", "塩",
 "sardine", "イワシ",
 "scorpion", "サソリ",
 "sea cucumber", "ナマコ",
+"seashell", "貝殻",
 "second", "秒",
+"secret", "秘密",
 "sentence", "文",
+"September", "9月",
 "sesame", "ゴマ",
 "shade", "日陰",
 "shake hands", "握手",
 "ship", "船",
+"short cut", "近道",
 "sidewalk", "歩道",
+"skelton", "骸骨",
 "skill", "技能",
 "sleeve", "袖",
 "smile", "笑顔",
+"smoke", "けむり",
+"snail", "カタツムリ",
 "solar system", "太陽系",
 "soldier", "兵士",
 "society", "社会",
@@ -164,14 +194,18 @@ var data = [
 "sugar", "砂糖",
 "suggestion", "提案",
 "sun", "太陽",
+"Sunday", "日曜日",
 "sunflower", "ヒマワリ",
 "sweet potato", "サツマイモ",
 "swim ring", "浮き輪",
 "teeth", "歯",
+"theater", "劇場",
 "thermometer", "温度計",
+"thunder", "雷",
 "toast", "乾杯",
 "tommorow", "明日",
 "tool", "道具",
+"trade", "貿易",
 "training", "訓練",
 "trap", "わな",
 "trapezoid", "台形",
@@ -183,6 +217,7 @@ var data = [
 "twins", "双子",
 "Venus", "金星",
 "waist", "腰",
+"wallet", "財布",
 "warning", "警告",
 "watermelon", "すいか",
 "wave", "波",
@@ -191,7 +226,9 @@ var data = [
 "wife", "妻",
 "wire", "はり金",
 "witch", "魔女",
-"yawn", "あくび"
+"wolf", "オオカミ",
+"yawn", "あくび",
+"zebra", "シマウマ"
 ];
 var qatype = "qa";
 var pos = 0;
@@ -202,7 +239,8 @@ function setqa() {
   } else {
     document.getElementById("qalabel").innerHTML = (pos % 2 == 0) ? "答え" : "問題";
   }
-  document.getElementById("qatext").innerHTML= data[pos];
+  document.getElementById("qapos").innerHTML = "" + (Math.floor(pos / 2) + 1) + "/" + data.length;
+  document.getElementById("qatext").innerHTML = data[pos];
 
   document.getElementById("qatypeval").innerHTML = qatype;
   document.getElementById("qadirval").innerHTML = qadir;
@@ -257,18 +295,19 @@ function chkdata() {
 </script>
 <style type="text/css">
 <!--
-p#qalabel { font-size:24px; font-weight:bold; color:red; line-height:0.5; }
-p#qatext { font-size:32px; font-weight:bold; color:blue; text-align:center; }
+span#qalabel { font-size:24px; font-weight:bold; color:red; line-height:0.5; }
+span#qapos { font-size:24px; font-weight:bold; color:black; line-height:0.5; }
+p#qatext { font-size:32px; font-weight:bold; color:blue; text-align:center; line-height:1.1; }
 div#ctrlpnl { margin-right:8px; }
 p#chklabel { margin:0 0 10px 0; font-size:24px; font-weight:bold; color:red; line-height:1.0; }
 div#chkpnl { margin-top:30px; padding:10px; background-color:rgba(255, 255, 255, 0.8); border:solid 1px #cccccc;}
 input#chktext { size:20; }
-.debug { display:block; }
+.debug { display:none; }
 -->
 </style>
 </head>
 <body onload="setqa();">
-<p id="qalabel">QA</p>
+<p><span id="qalabel">QA</span> <span id="qapos">0/0</span></p>
 <p id="qatext">テキスト</p>
 <div id="ctrlpnl">
 <form id="uiform" href="javascript:void(0);">
